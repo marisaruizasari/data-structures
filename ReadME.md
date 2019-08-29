@@ -42,7 +42,7 @@ request('https://parsons.nyc/thesis-2019/', function(error, response, body){
 Documentation
 ------
 ### Step 1: Install npm request & create directory  
-The started code indicated to install the npm request and create a directory named 'data'
+The starter code indicated to install the npm request and create a directory named 'data'
 
 ```
 npm install request
