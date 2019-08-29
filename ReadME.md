@@ -1,7 +1,8 @@
+## Week01 Assignment Documentation
 # Request 10 HTML files for AA Meetings in Manhattan 
 
 Instructions
-======
+------
 1. Using Node.js (in Cloud 9), make a request for each of the ten "Meeting List Agenda" pages for Manhattan. **Important: show the code for all ten requests.**
 ```
 https://parsons.nyc/aa/m01.html  
@@ -39,7 +40,7 @@ request('https://parsons.nyc/thesis-2019/', function(error, response, body){
 });
 ```
 Documentation
-======
+------
 ### Step 1: Install npm request & create directory  
 The started code indicated to install the npm request and create a directory named 'data'
 
