@@ -41,15 +41,15 @@ request('https://parsons.nyc/thesis-2019/', function(error, response, body){
 ```
 Documentation
 ------
-### Step 1: Install npm request & create directory  
-The starter code indicated to install the npm request and create a directory named 'data'
+### Install npm request & create directory  
+The starter code indicated to install the npm request and create a directory named 'aa-data'
 
 ```
 npm install request
-mkdir data
+mkdir aa-data
 ```
 
-### Step 2: Request each HTML file individually 
+### Approach 1: Request each HTML file individually 
 Since I'm new to coding, I wanted to make sure I understood the starter code and was able to use it to pull the body of each HTML file into a text file in my "local" cloud9 environment before trying to create a loop. 
 
 I first created variables that contain each of the 10 urls, and 10 respective txt file names to be saved in the data directory. 
@@ -95,7 +95,60 @@ request('https://parsons.nyc/aa/m03.html', function(error, response, body){
     else {console.log("Request failed!")}
 });
 ```
-I repeated this 10 times for each URL. This created 10 txt files containing each HTML file body in my cloud9 data directory. However, since this process would not be efficient in the case that there were more URLs, I wanted to explore the looping approach to expedite the process and write cleaner and shorter code. 
+I repeated this 10 times for each URL. This created 10 txt files containing each HTML file body in my cloud9 data directory. However, since this process would not be efficient in the case that there were more URLs, I wanted to explore the looping approach to expedite the process and write cleaner and shorter code. To do so, I started over with an empty aa-data directory in my cloud9 environment.
 
-### Step 3. Looping 
+### Approach 2: Storing HTML body txt files using a loop
 
+I first created variables for the url components: the base url which is the same for each HTML page, and the url number m01-10.
+
+```
+var urlBase = 'https://parsons.nyc/aa/'
+
+var urlNumber = [
+    'm01',  
+    'm02',  
+    'm03',  
+    'm04',  
+    'm05',  
+    'm06',  
+    'm07',  
+    'm08',  
+    'm09',  
+    'm10'
+    ];
+```
+
+I then tried to use a for loop using the request to store the HTML body in txt files, however since JavaScript runs asynchronously this method did not work and resulted in only one file being stored in the directory:
+
+```
+for (var i=0; i<10; i++) {
+    request(urlBase + urlNumber[i] + '.html', function(error, response, body){
+    if (!error && response.statusCode == 200) {
+        fs.writeFileSync('/home/ec2-user/environment/datatest/' + urlNumber[i] +'.txt', body);
+    }
+    else {console.log("Request failed!")}
+});
+}
+```
+
+Instead I created a separate function for the request that could be called upon in a later for loop: 
+
+```
+function retrieveHtml(i) {
+    request(urlBase + urlNumber[i] + '.html', function(error, response, body){
+    if (!error && response.statusCode == 200) {
+        fs.writeFileSync('/home/ec2-user/environment/aa-data/' + urlNumber[i] +'.txt', body);
+    }
+    else {console.log("Request failed!")}
+});
+}
+```
+
+And finally I created a for loop that called in my retrieveHtml function, which successfully saved 10 txt files in my aa-data directory with the correct HTML body for each of the 10 urls:
+
+```
+for (var i=0; i<10; i++) {
+    retrieveHtml(i);
+}
+
+```
