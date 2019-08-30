@@ -44,7 +44,7 @@ Documentation
 ### Install npm request & create directory  
 The starter code indicated to install the npm request and create a directory named 'aa-data'
 
-```
+```javascript
 npm install request
 mkdir aa-data
 ```
@@ -101,7 +101,7 @@ I repeated this 10 times for each URL. This created 10 txt files containing each
 
 I first created variables for the url components: the base url which is the same for each HTML page, and the url number m01-10.
 
-```
+```javascript
 var urlBase = 'https://parsons.nyc/aa/'
 
 var urlNumber = [
@@ -120,7 +120,7 @@ var urlNumber = [
 
 I then tried to use a for loop using the request to store the HTML body in txt files, however since JavaScript runs asynchronously this method did not work and resulted in only one file being stored in the directory:
 
-```
+```javascript
 for (var i=0; i<10; i++) {
     request(urlBase + urlNumber[i] + '.html', function(error, response, body){
     if (!error && response.statusCode == 200) {
@@ -133,7 +133,7 @@ for (var i=0; i<10; i++) {
 
 Instead I created a separate function for the request that could be called upon in a later for loop: 
 
-```
+```javascript
 function retrieveHtml(i) {
     request(urlBase + urlNumber[i] + '.html', function(error, response, body){
     if (!error && response.statusCode == 200) {
@@ -146,7 +146,7 @@ function retrieveHtml(i) {
 
 And finally I created a for loop that called in my retrieveHtml function, which successfully saved 10 txt files in my aa-data directory with the correct HTML body for each of the 10 urls:
 
-```
+```javascript
 for (var i=0; i<10; i++) {
     retrieveHtml(i);
 }
