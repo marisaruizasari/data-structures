@@ -95,7 +95,9 @@ request('https://parsons.nyc/aa/m03.html', function(error, response, body){
     else {console.log("Request failed!")}
 });
 ```
-I repeated this 10 times for each URL. This created 10 txt files containing each HTML file body in my cloud9 data directory. However, since this process would not be efficient in the case that there were more URLs, I wanted to explore the looping approach to expedite the process and write cleaner and shorter code. To do so, I started over with an empty aa-data directory in my cloud9 environment.
+I repeated this 10 times for each URL. This created 10 txt files containing each HTML file body in my cloud9 aa-data directory. 
+
+However, since this process would not be efficient in the case that there were more URLs, I wanted to explore the looping approach to expedite the process and write cleaner and shorter code. To do so, I started over with an empty aa-data directory in my cloud9 environment.
 
 ### Approach 2: Storing HTML body txt files using a loop
 
