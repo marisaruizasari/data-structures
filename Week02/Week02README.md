@@ -63,7 +63,7 @@ var $ = cheerio.load(content);
 ```
 
 ### Create variables to store address components 
-I first created an empty array to hold each of the final addresses, as well as empty variables the individual lines/components of each address.
+I first created an empty array to hold each of the final addresses, as well as empty variables for the individual lines/components of each address.
 
 ```javascript
 var addresses = []
@@ -77,7 +77,7 @@ let zipCode = []
 ```
 
 ### Push address components to variables
-Next I pushed the text for each address line/component to its respective variable, specifying the 'td' table cell style and child element. For the group names and building names I was able to use .text since I wanted the entire string for the respective child element, but for the street address and all remaining address components I used .html since I needed to split on <br>. This created an issue for the street detail (&s were converted to &amp since it was reading HTML) but I was able to correct this by using .replace.
+Next I pushed the text for each address line/component to its respective variable, specifying the 'td' table cell style and child element. For the group names and building names I was able to use .text since I wanted the entire string for the respective child element, but for the street address and all remaining address components I used .html since I needed to split on breaks. This created an issue for the street detail (&s were converted to &amp since it was reading HTML) but I was able to correct this by using .replace.
 
 ```javascript
 // group names
