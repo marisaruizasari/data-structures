@@ -153,3 +153,8 @@ console.log(addresses);
 
 };
 ```
+
+### Create new text file with addresses
+```javascript
+fs.writeFileSync('/home/ec2-user/environment/data-structures/Week02/m09addresses.txt', addresses);
+```
