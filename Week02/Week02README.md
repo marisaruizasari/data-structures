@@ -63,7 +63,7 @@ var $ = cheerio.load(content);
 ```
 
 ### Create variables to store address components 
-I first created an empty array to hold each of the final addresses, as well as empty variables for each addresses' individual lines/components 
+I first created an empty array to hold each of the final addresses, as well as empty variables for the individual lines/components of each address.
 
 ```javascript
 var addresses = []
@@ -77,7 +77,8 @@ let zipCode = []
 ```
 
 ### Push address components to variables
-Next I pushed the text for each address line/component to its respective variable, specifying the 'td' table cell style and child element. 
+Next I pushed the text for each address line/component to its respective variable, specifying the 'td' table cell style and child element. For the group names and building names I was able to use .text since I wanted the entire string for the respective child element, but for the street address and all remaining address components I used .html since I needed to split on breaks. This created an issue for the street detail (&s were converted to &amp since it was reading HTML) but I was able to correct this by using .replace.
+
 ```javascript
 // group names
 $('td > b:nth-child(3)').each(function(i, elem) {
@@ -137,6 +138,7 @@ $('td').each(function(i, elem) {
  
 ### Loop through each address & push to array
 Finally I created a loop to push each individual address to the empty addresses array.
+This worked for my file since I only had four addresses to parse, but I wonder if this would be the most efficient way to parse if I had a file that had hundreds of addresses and I wasn't sure exactly how many (since this method requires specifying i<#)?
 ```javascript
 for (var i=0; i<4; i++) {
  let address = `
