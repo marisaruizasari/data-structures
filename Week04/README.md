@@ -251,5 +251,5 @@ This week I attempted to pull in this addtiional information by going back to my
 
 1. I had trouble parsing of the additional information from the html file from Week01 - I was able to parse the following information:group name, street address, building name, room details, street details, and zip code, but was not able to parse the remaining desired information: meeting type, special interest, wheelchair accessibility, start time, and end time. This was due to the fact that this information is contained in a 'td' element with a different 'style' attribute. 
 2. 2. I had trouble creating one json file that contained both the geocoded information (lat/long) as well as the additional information that I was able to parse. Thus for the time being I used only my json file that contained address, lat, and long which is what is reflected above in the assignemnt resutls. 
-3. 
-4. My next steps are to pull the remaining infromation into one json file and generate multiple tables that follow my database structure diagram. 
+
+My next steps are to pull the remaining infromation into one json file and generate multiple tables that follow my database structure diagram. 
