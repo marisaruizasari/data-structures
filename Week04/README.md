@@ -1,10 +1,10 @@
-### Week034 Assignment Documentation
+### Week04 Assignment Documentation
 # Create a table within aa meetings database 
 
 Instructions
 ------
 
-## Setup and preparation
+### Setup and preparation
 
 You will use Amazon Web Services to host a PostgreSQL database server. Follow [these instructions](https://github.com/visualizedata/data-structures/blob/master/weekly_assignment_04_documentation.md) to set up and access an instance you will use for your SQL work in this class; the setup should take about 30 minutes to complete. 
 
@@ -180,7 +180,7 @@ client.query(thisQuery, (err, res) => {
 });
 ```
 
-### Part Three: Populate your database
+### Part Three: Populate your database (week04b.js)
 
 I next read my json file containing the geocoded addresses from week03 assignment and parsed the file, saving each address in a new addressesForDb variable:
 
@@ -205,7 +205,7 @@ async.eachSeries(addressesForDb, function(value, callback) {
 }); 
 ```
 
-### Part Four: Check your work
+### Part Four: Check your work (week04c.js)
 
 Using the starter code, I checked the contents of the aalocations table, console.logging only the row contents:
 
@@ -245,4 +245,11 @@ null Result {
 
 ### Final notes
 
-For this assignment I was able to generate a table and store three elements: address, latitude, and longitude. However, as I noted in Week03 assignment, and as reflected in my Part One database structure diagram, I will eventually need to store additional information about each individual meeting (start and end time, meeting type, special interests etc). This week I attempted to pull in this addtiional information by going back to my Week02 parsed json file and regenerating my Week03 geocoded json file. I came across two issues in this attempt: 1. I had trouble parsing of the additional information from the html file from Week01 - I was able to parse the following information:group name, street address, building name, room details, street details, and zip code, but was not able to parse the remaining desired information: meeting type, special interest, wheelchair accessibility, start time, and end time. This was due to the fact that this information is contained in a 'td' element with a different 'style' attribute. 2. I had trouble creating one json file that contained both the geocoded information (lat/long) as well as the additional information that I was able to parse. Thus for the time being I used only my json file that contained address, lat, and long which is what is reflected above in the assignemnt resutls. My next steps are to pull the remaining infromation into one json file and generate multiple tables that follow my database structure diagram. 
+For this assignment I was able to generate a table and store three elements: address, latitude, and longitude. However, as I noted in Week03 assignment, and as reflected in my Part One database structure diagram, I will eventually need to store additional information about each individual meeting (start and end time, meeting type, special interests etc). 
+
+This week I attempted to pull in this addtiional information by going back to my Week02 parsed json file and regenerating my Week03 geocoded json file. I came across two issues in this attempt: 
+
+1. I had trouble parsing of the additional information from the html file from Week01 - I was able to parse the following information:group name, street address, building name, room details, street details, and zip code, but was not able to parse the remaining desired information: meeting type, special interest, wheelchair accessibility, start time, and end time. This was due to the fact that this information is contained in a 'td' element with a different 'style' attribute. 
+2. 2. I had trouble creating one json file that contained both the geocoded information (lat/long) as well as the additional information that I was able to parse. Thus for the time being I used only my json file that contained address, lat, and long which is what is reflected above in the assignemnt resutls. 
+3. 
+4. My next steps are to pull the remaining infromation into one json file and generate multiple tables that follow my database structure diagram. 
