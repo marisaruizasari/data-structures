@@ -98,6 +98,7 @@ dynamodb.putItem(params, function (err, data) {
 });
 ```
 
+
 Documentation
 ------
 
@@ -169,7 +170,9 @@ blogEntries.push(new BlogEntry('Weekday, no class', 'September 27, 2019', "Frida
 ```
 ### Part Three: Populate your database
 
-Lastly, I used putItem to populate the dsProcessBlog DynamoDB database I created in the setup and preparation step. Here we had two key challenges: 1. we needed to iterate over all the entries to populate the table in a loop, 2. we needed to not attempt more than 2 puts per second.
+I started by updating permissions for my Cloud9 EC2 instance to be able to access DynamoDB. Here we took extra precaution and did not use an access key for security reasons (we don't want this ending up on GitHub!).
+
+Then, I used putItem to populate the dsProcessBlog DynamoDB database I created in the setup and preparation step. Here we had two key challenges: 1. we needed to iterate over all the entries to populate the table in a loop, 2. we needed to not attempt more than 2 puts per second.
 
 This was the most challenging step for me coding wise and conceptually. I started by creating a for loop to iterate over the blogEntries array, which worked and populated the table with my entries, but did not address the number of puts per second. 
 
@@ -187,7 +190,7 @@ for (var i=0; i<blogEntries.length; i++){
 }
 ```
 
-To address the puts per second, I wanted to use the setTimeout method we used last week. I referenced my week04b.js script to pull the async.eachSeries and setTimeout callback code. 
+I scratched this idea, and turned to async. To address the puts per second, I wanted to use the setTimeout method we used last week. I referenced my week04b.js script to pull the async.eachSeries and setTimeout callback code. 
 
 My biggest challenge here was adapting the code to fit the goals of this week - I got confused with the input for the params.Item component, and kept try to set it to blogEntries which would return an error, or blogEntries[0] which would return only the first blog entry in the array. 
 Since I'm new to javascript I didn't see that the 'value' argument needed to be added since this is the 'iteratee' (equivalent to i in a for loop). My final async.eachSeries code block was able to populate my table with all 6 entries using setTimeout:
