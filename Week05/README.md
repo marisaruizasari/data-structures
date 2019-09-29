@@ -104,16 +104,19 @@ Documentation
 ### Setup and preparation
 
 I created a table in DynamoDB named "dsProcessBlog", with a primary/partition key of Category (string) and sort key of Date (string). 
+
 Since I decided to use a sort key in combination with the partition key, I wanted the primary/partition key to be a higher level grouping that could then be further sorted by date. In this table the pk of "Category" represents a classification of weekday (weekday with no class, weekday with class, or weekend).
 
-![dsProcessBlog pk & sk](images/dsProcessBlog-key.png)
+![dsProcessBlog pk & sk](images/dsProcessBlog-keys.png)
 
 ### Part One: Plan
 
 For this assignment I wanted to play around with partition and sort key combinations, and chose to create a week of mock blog enrtries using Sunday-Friday of this week. Here I am recording information about my daily activities at school, as well as my stress and sleep patterns, and physical activity. 
 My denormalized data model treats each blog entry as its own entity that can contain a range of components (enrty text, stress level, hours of sleep, gym activities). It is not necessary for each entry to have all of the components, and thus this model gives the database and entries more flexibility. 
-Each of the colored rectangles represents one blog entry. The model represents groupings by primary key using color (weekday with no class = orange, weekday with class = blue, weekend = green), and repsents the date sort key through layering (top layer representing the most recent date within the pk category).
-The grey rectangle at the top represents one document containing and array of objects of each of the blog entries (colored arrows flow from each entry to this document).
+Each of the colored rectangles represents one blog entry. 
+
+The model represents groupings by primary key using color (weekday with no class = orange, weekday with class = blue, weekend = green), and repsents the date sort key through layering (top layer representing the most recent date within the pk category).
+The grey rectangle at the top represents one document containing an array of objects of each of the blog entries (colored arrows flow from each entry to this document).
 
 ![noSQL db structure diagram](images/noSQL_dboutline.png)
 
@@ -167,6 +170,7 @@ blogEntries.push(new BlogEntry('Weekday, no class', 'September 27, 2019', "Frida
 ### Part Three: Populate your database
 
 Lastly, I used putItem to populate the dsProcessBlog DynamoDB database I created in the setup and preparation step. Here we had two key challenges: 1. we needed to iterate over all the entries to populate the table in a loop, 2. we needed to not attempt more than 2 puts per second.
+
 This was the most challenging step for me coding wise and conceptually. I started by creating a for loop to iterate over the blogEntries array, which worked and populated the table with my entries, but did not address the number of puts per second. 
 
 ```javascript
@@ -184,6 +188,7 @@ for (var i=0; i<blogEntries.length; i++){
 ```
 
 To address the puts per second, I wanted to use the setTimeout method we used last week. I referenced my week04b.js script to pull the async.eachSeries and setTimeout callback code. 
+
 My biggest challenge here was adapting the code to fit the goals of this week - I got confused with the input for the params.Item component, and kept try to set it to blogEntries which would return an error, or blogEntries[0] which would return only the first blog entry in the array. 
 Since I'm new to javascript I didn't see that the 'value' argument needed to be added since this is the 'iteratee' (equivalent to i in a for loop). My final async.eachSeries code block was able to populate my table with all 6 entries using setTimeout:
 
