@@ -154,7 +154,7 @@ client.query(thisQueryMeetings, (err, res) => {
 
 Next I populated the addresses and meetings tables using an updated json file that contains the parsed locations and meetings. 
 
-Sample location object from updated zone 9 json file (m09.json): 
+Sample location object from updated zone 9 json file (AAdata_zone9/m09.json): 
 
 ```javascript
 {
@@ -326,7 +326,7 @@ Part 2 of Week06 assignment focused on the Process Blog for Final Assignment 2.
 
 To complete part 2 of Week06 assignment, I first went back to Week05 assignment to update my DynamoDB 'table' of blog entries:
 
-First, I changed the data type of my date sort key to Number instead of String (Week05/week05Update.js): 
+First, I changed the data type of my date sort key to Number instead of String (BlogUpdate/week05Update.js): 
 
 ```javascript
 class BlogEntry {
@@ -353,7 +353,7 @@ class BlogEntry {
 }
 ```
 
-Next I added 7 new entries to this 'table' (Week05/week05Update.js):
+Next I added 7 new entries to this 'table' (BlogUpdate/week05Update.js):
 
 ```javascript
 blogEntries.push(new BlogEntry('Weekend', 'September 29, 2019', "Sunday", "I worked on my DVIA presentation and data structures assignment 6. I went to an exercise event in Union Square Park with my friend Annabelle", 2, 8, ["core", "yoga"]));
