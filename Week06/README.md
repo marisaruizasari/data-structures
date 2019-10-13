@@ -154,7 +154,7 @@ client.query(thisQueryMeetings, (err, res) => {
 
 Next I populated the addresses and meetings tables using an updated json file that contains the parsed locations and meetings. 
 
-Sample location object from updated zone 9 json file: 
+Sample location object from updated zone 9 json file (m09.json): 
 
 ```javascript
 {
@@ -310,6 +310,8 @@ weekday     starttime  endtime  groupname         locationkey
 Wednesdays  8:00       9:00     Grupo Nueva Vida  3          
 Thursdays   8:00       9:00     Grupo Nueva Vida  3 
 ```
+![part1query](QueryImages/Part1query.png)
+
 ### Part 1 Reflections
 
 This exercise was helpful to re-structure my data and parse additional information. It's key to note here that I haven't included geocoded data in this version of the addresses table. For next week I need to add the latitude and longitude to my addresses table, and make a decision about whether I will keep my original database model from Week04, or use a new database structure. 
@@ -460,6 +462,7 @@ Query succeeded.
   Category: { S: 'Weekday, class' } }
 
 ```
+![part2query](QueryImages/Part2query.png)
 
 ### Part 2 Reflections
 
