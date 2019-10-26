@@ -10,7 +10,7 @@ const apiKey = process.env.TAMU_KEY;
 
 
 // read json address file 
-var meetingData = fs.readFileSync('/home/ec2-user/environment/data-structures/Week07/jsonFiles/allZones.json');
+var meetingData = fs.readFileSync('/home/ec2-user/environment/data-structures/Week07/jsonFiles/allZones2.json');
 meetingData = JSON.parse(meetingData);
 // console.log(json.length);
 // console.log(json);
@@ -61,7 +61,7 @@ async.eachSeries(meetingData, function(value, callback) {
     setTimeout(callback, 2000);
 
 }, function() {
-    fs.writeFileSync('/home/ec2-user/environment/data-structures/Week07/jsonFiles/GeocodedAllZones.json', JSON.stringify(geocodedMeetingData));
+    fs.writeFileSync('/home/ec2-user/environment/data-structures/Week07/jsonFiles/GeocodedAllZones2.json', JSON.stringify(geocodedMeetingData));
     console.log('*** *** *** *** ***');
     console.log('Number of locations: ');
     console.log(geocodedMeetingData.length);
