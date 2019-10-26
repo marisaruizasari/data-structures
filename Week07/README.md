@@ -20,38 +20,38 @@ Documentation
 ------
 ## Approach & file dictionary 
 
-1. Parse all 10 zones
+#### 1. Parse all 10 zones
 
-script: parse-aaAll.js
+    script: parse-aaAll.js
     
-output: jsonFiles/allZones2.json
+    output: jsonFiles/allZones2.json
     
-2. Geocode all locations 
+#### 2. Geocode all locations 
 
-script: geocode-aaAll.js
+    script: geocode-aaAll.js
     
-output: jsonFiles/GeocodedAllZones2.json
+    output: jsonFiles/GeocodedAllZones2.json
     
-3. Clean and assign location primary key (PK) 
+#### 3. Clean and assign location primary key (PK) 
     
-script: cleanAndCode.js
+    script: cleanAndCode.js
 
-output: jsonFiles/allZonesWithLocationPK2.json
+    output: jsonFiles/allZonesWithLocationPK2.json
 
-4. Create separate json files for meetings and locations 
+#### 4. Create separate json files for meetings and locations 
 
-script: makeTableJsons.js
+    script: makeTableJsons.js
     
-output: jsonFiles/allMeetingsWithPK.json, 
-jsonFiles/locationPKFortable.json
+    output: jsonFiles/allMeetingsWithPK.json, 
+    jsonFiles/locationPKFortable.json
 
-5. Create, populate, & test query SQL database tables
+#### 5. Create, populate, & test query SQL database tables
     
-script: Create_tables/week07a.js,
-Create_tables/week07b.js,
-Create_tables/week07c.js
+    script: Create_tables/week07a.js,
+    Create_tables/week07b.js,
+    Create_tables/week07c.js
 
-output: see documentation sections below
+    output: see documentation sections below
 
 ## 1. Parse all 10 zones
 
