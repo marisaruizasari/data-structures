@@ -21,28 +21,43 @@ Documentation
 ## Approach & file dictionary 
 
 1. Parse all 10 zones
-    script: parse-aaAll.js
-    output: jsonFiles/allZones2.json
+
+script: parse-aaAll.js
+    
+output: jsonFiles/allZones2.json
+    
 2. Geocode all locations 
-    script: geocode-aaAll.js
-    output: jsonFiles/GeocodedAllZones2.json
+
+script: geocode-aaAll.js
+    
+output: jsonFiles/GeocodedAllZones2.json
+    
 3. Clean and assign location primary key (PK) 
-    script: cleanAndCode.js
-    output: jsonFiles/allZonesWithLocationPK2.json
+    
+script: cleanAndCode.js
+
+output: jsonFiles/allZonesWithLocationPK2.json
+
 4. Create separate json files for meetings and locations 
-    script: makeTableJsons.js
-    output: jsonFiles/allMeetingsWithPK.json, 
-            jsonFiles/locationPKFortable.json
+
+script: makeTableJsons.js
+    
+output: jsonFiles/allMeetingsWithPK.json, 
+jsonFiles/locationPKFortable.json
+
 5. Create, populate, & test query SQL database tables
-    script: Create_tables/week07a.js,
-            Create_tables/week07b.js,
-            Create_tables/week07c.js
-    output: see documentation sections below
+    
+script: Create_tables/week07a.js,
+Create_tables/week07b.js,
+Create_tables/week07c.js
+
+output: see documentation sections below
 
 ## 1. Parse all 10 zones
 
-script: parse-aaAll.js
-output: jsonFiles/allZones2.json
+#### script: parse-aaAll.js
+
+#### output: jsonFiles/allZones2.json
 
 The structure of my final json should be an array of objects for each unique location+group combination, with nested set of meeting instances for each location+group combination. I first created an empty array to hold the final data, and empty object to hold each unique location+group information.
 ```javascript
@@ -239,8 +254,9 @@ fs.writeFileSync('/home/ec2-user/environment/data-structures/Week07/jsonFiles/al
 
 ## 2. Geocode all locations 
 
-script: geocode-aaAll.js
-output: jsonFiles/GeocodedAllZones2.json
+#### script: geocode-aaAll.js
+
+#### output: jsonFiles/GeocodedAllZones2.json
 
 This mainly mirrors my week03 script, here I just added zipcode to the api query url to make the geocoding more accurate. I created a new array with the geocode information nested in each object & wrote the new array to a json file (GeocodedAllZones2.json).
 
@@ -291,8 +307,9 @@ async.eachSeries(meetingData, function(value, callback) {
 
 ## 3. Clean and assign location primary key (PK) 
 
-script: cleanAndCode.js
-output: jsonFiles/allZonesWithLocationPK2.json
+#### script: cleanAndCode.js
+
+#### output: jsonFiles/allZonesWithLocationPK2.json
 
 I first replaced addresses that had input errors. This code is quite redundnant, but I couldn't get it to work by replacing with variables.
 ```javascript
@@ -388,6 +405,7 @@ updatedMeetingData.forEach(location => {
 ## 4. Create separate json files for meetings and locations 
 
 script: makeTableJsons.js
+
 output: jsonFiles/allMeetingsWithPK.json, 
             jsonFiles/locationPKFortable.json
             
@@ -395,7 +413,7 @@ Since my new json file (allZonesWithLocationPK2) had a location pk within each o
 
 ## 5. Create, populate, & test query SQL database tables
 
-script: A. Create_tables/week07a.js,
+#### script: A. Create_tables/week07a.js,
         B. Create_tables/week07b.js,
         C. Create_tables/week07c.js
         
