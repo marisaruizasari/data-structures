@@ -211,7 +211,7 @@ For this assignemnt I decided to use the SQL database that we've been working wi
 
 #### Set up SQL table 
 
-script: setup.js
+[script: setup.js](setup.js)
 
 #### Set up EC2 instance & install PM2 Runtime
 
@@ -219,11 +219,11 @@ script: ecosystem.config.js (not uploaded to github)
 
 #### Request to the Particle API
 
-script: app.js
+[script: app.js](app.js)
 
 #### Check table 
 
-script: checkTable.js
+[script: checkTable.js](checkTable.js)
 
 
 ## Set up SQL table 
