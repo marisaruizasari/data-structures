@@ -209,25 +209,25 @@ For this assignemnt I decided to use the SQL database that we've been working wi
 
 ## Approach & file dictionary
 
-#### Set up SQL table 
+#### 1. Set up SQL table 
 
 [script: setup.js](setup.js)
 
-#### Set up EC2 instance & install PM2 Runtime
+#### 2. Set up EC2 instance & install PM2 Runtime
 
 script: ecosystem.config.js (not uploaded to github)
 
-#### Request to the Particle API
+#### 3. Request to the Particle API
 
 [script: app.js](app.js)
 
-#### Check table 
+#### 4. Check table 
 
 [script: checkTable.js](checkTable.js)
 
 
-## Set up SQL table 
-script: setup.js
+## 1. Set up SQL table 
+[script: setup.js](setup.js)
 
 I created a new table in my aa SQL database called sensorData. The two columns I'm including are sensorValue and sensorTime. The first is double precision, becuase we want it to be as exact as possible and not round. sensorTime data type is timestamp DEFAULT current_timestamp, which will give me the current time at which the sensorValue was recorded and written to the table.
 
@@ -262,7 +262,7 @@ client.query(thisQuery, (err, res) => {
 });
 ```
 
-## Set up EC2 instance & install PM2 Runtime
+## 2. Set up EC2 instance & install PM2 Runtime
 script: ecosystem.config.js (not uploaded to github)
 
 Here I changed the EC2 instance to never stop running (usually it times out after 30 minutes), since we need it to run continously to keep recording the data at set intervals (see instructions part 2 above).
@@ -285,8 +285,8 @@ The configuration file, ecosystem.config.js, is not uploaded to github beccause 
     },
 ```
 
-## Request to the Particle API
-script: app.js
+## 3. Request to the Particle API
+[script: app.js](app.js)
 
 I decided to wrtie to my table every minute instead of every five minutes, since I think it will be better to have too much data rather than not enough at the end of the project. 
 
@@ -347,8 +347,8 @@ setInterval(getAndWriteData, 60000);
 
 ```
 
-## Check table 
-script: checkTable.js
+## 4. Check table 
+[script: checkTable.js](checkTable.js)
 
 Finally, I created a script to check the contents of my postgres SQL sensorData table. Using a similar process to the table setup script, I connected to the database using my credentials stored in my .env file.
 
