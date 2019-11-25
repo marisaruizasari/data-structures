@@ -9,4 +9,4 @@
 
 # Temperature Sensor Interface Design
 
-![tempsensor](Process-blog-design.png)
+![tempsensor](Temp-sensor-design.png)
