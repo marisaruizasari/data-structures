@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/styles.css">
+    <title></title>
+  </head>
+  <body>
+    
+    <p class="selection-title"> Beginners Meetings on Monday after 8pm: {{aaVariable}}</p> <br>
+    
+    
+    {{#meetings}}
+    
+    <div class="meetings">
+        Location: {{addresspk}} <br>
+        Meeting Day: {{weekday}} <br>
+        Time: {{starttime}} <br>
+        Type: {{typename}} <br>
+    </div> <br><br>
+    
+    {{/meetings}} 
+    
+    
+  </body>
+</html>
