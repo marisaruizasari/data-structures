@@ -1,0 +1,63 @@
+<head>
+    <!-- You can link a stylesheet just for this blog.html file to use or use the same one that was used in index.html  -->
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gelasio|Inria+Serif:700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+    <link rel='stylesheet' type='text/css' href='pblog-styles.css' />
+</head>
+
+<body>
+    <div class="home">
+        <p class="big-text">Process Blog</p> <br> Fall 2019 <br>
+        <p class='sm-text'>Marisa Ruiz Asari <br> Parsons MS in Data Visualization</p>
+    </div>
+    <div>
+        <div class="col-sm fixed-top">
+            <div class="select-text">
+                <p>Select a blogpost category:</p>
+            </div>
+            <div class="col-sm">
+                <select class="custom-select" name="category">
+                    <option selected value="none">Blogpost Category</option>
+                    <option value="DVIA">DVIA</option>
+                    <option value="Major Studio">Major Studio</option>
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="Statistics">Statistics</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="anchor"></div>
+
+        <!-- This div is where we will put information using the blog.js file -->
+        <!--<div class="blogposts"></div>-->
+    </div>
+
+    <main>
+        <section id='scrolly'>
+
+            <figure>
+                <img src="" class="figure-img"></img>
+                <p></p>
+                <p class="figure-info"></p>
+
+            </figure>
+
+            <article class="blogposts"></article>
+
+
+        </section>
+    </main>
+
+    <!-- You must include the full version of jquery for ajax to work. The version included with bootstrap is the lite version -->
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src='https://unpkg.com/d3@5.9.1/dist/d3.min.js'></script>
+    <script src='https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js'></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    <script src="pblog.js"></script>
+
+</body>

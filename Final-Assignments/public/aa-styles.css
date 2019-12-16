@@ -1,0 +1,187 @@
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+
+.form-control-range {
+    width: 300px;
+}
+
+
+#appearance1 .rs-range-color {
+    background-color: #F49970;
+}
+
+#appearance1 .rs-path-color {
+    background-color: #edecec;
+}
+
+#appearance1 .rs-handle {
+    background-color: #F15A24;
+    /*background-color: #c29863;*/
+    /*background-color: transparent;*/
+    /*border: 8px solid transparent;*/
+    /*border-right-color: black;*/
+    /*margin: -10px 0 0 0 !important;*/
+}
+
+#appearance1 .rs-bg-color {
+    background-color: #ffffff;
+}
+
+#appearance1 .rs-border {
+    border-width: 0px;
+}
+
+#appearance1 {
+    margin-top: 50px;
+}
+
+
+.full-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #CBD2D3;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.no-wr {
+    width: 30%;
+    height: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.site-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: grey;
+    margin-top: 50px;
+}
+
+.aa {
+    display: inline;
+    padding: 0;
+    color: #E8E8E8;
+}
+
+.colm-b {
+    background-color: white;
+    margin-right: -10px;
+}
+
+.colm-c {
+    padding: 0;
+    margin-right: -8%;
+    width: 40%;
+}
+
+.meetings {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.meeting-info {
+    padding: 15px;
+    background-color: #F0F2F2;
+    margin-bottom: 40px;
+    font-family: 'Source Sans Pro', sans-serif;
+    cursor: pointer;
+
+
+}
+
+.meeting-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #F15A24;
+}
+
+.meeting-info p {
+    margin-bottom: 0;
+}
+
+.address {
+    margin-bottom: 0;
+    text-transform: capitalize;
+}
+
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 18px !important;
+    background-color: #CBD2D3 !important;
+    border: none !important;
+    padding: 10px;
+    margin: 3px;
+}
+
+.active {
+    background-color: #F15A24 !important;
+}
+
+.weekdays {
+    background-color: rgb(255, 255, 255, 0) !important;
+    border: none !important;
+    padding-left: 0;
+}
+
+.med-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+}
+
+.small-text {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 13px !important;
+    font-style: italic !important;
+    color: grey !important;
+
+}
+
+.leaflet-popup-content {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 12px;
+}
+
+.grp-name {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.add-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #F15A24;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.ada {
+    font-size: 12px;
+    color: grey;
+}
+
+.mtg-type {
+    color: grey;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.leaflet-popup-content p {
+    margin: 0 !important;
+}

@@ -1,0 +1,133 @@
+body {
+    background-color: #CC4A35;
+}
+
+#map {
+    height: 600px;
+    width: 300px;
+}
+
+.form-control-range {
+    width: 300px;
+}
+
+
+#appearance1 .rs-range-color {
+    background-color: #e9b074;
+}
+
+#appearance1 .rs-path-color {
+    background-color: #edecec;
+}
+
+#appearance1 .rs-handle {
+    background-color: #c29863;
+    /*background-color: transparent;*/
+    /*border: 8px solid transparent;*/
+    /*border-right-color: black;*/
+    /*margin: -10px 0 0 0 !important;*/
+}
+
+#appearance1 .rs-bg-color {
+    background-color: #ffffff;
+}
+
+#appearance1 .rs-border {
+    border-width: 0px;
+}
+
+
+.content-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-left: 50px;
+
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    height: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    /*background-color: tan;*/
+}
+
+#my_dataviz {
+    display: inline-block;
+    width: 80%;
+    height: 300px;
+    margin-top: -50px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 250px;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider-container {
+    height: 150px;
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: visible;
+}
+
+.slidecontainer {
+    flex-basis: 80%;
+}
+
+.time-display {
+    flex-basis: 15%;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+.site-title {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-top: 50px;
+    color: white;
+}
+
+
+.sensor-img {
+    width: 200px;
+    height: auto;
+    /*position: absolute;*/
+    margin-left: -100px;
+}

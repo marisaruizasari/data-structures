@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(220,220,220);
+}
+
+.title {
+    color: #D65E3B;
+    padding: 50px;
+}
+
+.selection-title {
+    font-size: 30px;
+}
+
+#mapid { 
+    height: 500px; 
+    width: 200px;
+    
+}
+
+.row {
+    padding: 50px;
+}
+.card-text {
+    min-height: 100px;
+}
+
+.info {
+    padding-left: 50px;
+}
+
+.btn-primary {
+    background-color: #FF764D;
+    border: none;
+}
