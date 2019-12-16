@@ -27,7 +27,7 @@ Sketched design for interface from Week 11 assignment:
 ![aa map sketch](../Week11/AA-map-design.png)
 
 Final result:
-![final aa map](aa.gif)
+![final aa map](documentation/aa.gif)
 
 #### Overview
 
